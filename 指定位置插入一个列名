@@ -1,0 +1,17 @@
+import pandas as pd
+
+#首先读取现有所有字段名col_name:
+col_name = df.columns.tolist()
+
+# 使用insert 在指定位置加入你想 加入 的列名
+col_name.insert(1,'类型')
+
+# 将新列名赋予原表:
+df_1 = df.reindex(columns=col_name)
+
+这样源数据表中就多出了一个数值全部是NAN的 '类型' 列.
+
+目前这么新增后 发现一个问题 :
+使用insert 新加入的列名 不能按条件 直接用 等号(=) 赋值
+
+欢迎大神补充 或 提出问题.
